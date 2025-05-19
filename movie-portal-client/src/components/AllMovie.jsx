@@ -20,7 +20,7 @@ export default function AllMovie() {
 
     const queryString = filters.length > 0 ? `?${filters.join("&")}` : "";
 
-    fetch(`http://localhost:5000/addmovie${queryString}`)
+   fetch(`${process.env.REACT_APP_API_URL}/addmovie${queryString}`)
       .then((res) => res.json())
       .then((data) => {
         setMovieData(data);
