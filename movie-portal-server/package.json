@@ -1,0 +1,26 @@
+{
+  "name": "movie-portal-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  "start": "concurrently \"nodemon server.js\" \"node bot.js\"",
+  "test": "echo \"Error: no test specified\" && exit 1"
+},
+
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.6",
+    "express": "^4.21.1",
+    "firebase-admin": "^13.3.0",
+    "mongodb": "^6.11.0",
+    "mongoose": "^8.14.2",
+    "node-telegram-bot-api": "^0.66.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
