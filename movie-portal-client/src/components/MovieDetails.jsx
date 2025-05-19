@@ -19,7 +19,8 @@ export default function MovieDetails() {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-       const response = await fetch(`${process.env.REACT_APP_API_URL}/reviews/${id}`);
+       const response = await fetch(`https://movie-portal-server.onrender.com/reviews/${id}`);
+
         if (!response.ok) {
           throw new Error('Failed to load reviews');
         }
@@ -36,7 +37,7 @@ export default function MovieDetails() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/reviews`, {
+      const response = await fetch(`https://movie-portal-server.onrender.com/reviews`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -62,7 +63,7 @@ export default function MovieDetails() {
   const handleDelete = async (reviewId) => {
     if (window.confirm("Вы уверены, что хотите удалить этот отзыв?")) {
       try {
-       const response = await fetch(`${process.env.REACT_APP_API_URL}/reviews/${reviewId}`, {
+       const response = await fetch(`https://movie-portal-server.onrender.com/reviews/${reviewId}`, {
           method: 'DELETE',
         });
         if (!response.ok) {
